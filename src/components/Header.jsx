@@ -6,7 +6,7 @@ const Header = ({ room, setRoom }) => {
       <p>{auth.currentUser.displayName}</p>
       <p className="font-semibold">{room}</p>
       <button onClick={() => setRoom(null)} className="btn">
-        Farklı Oda
+        Different Room
       </button>
     </header>
   );

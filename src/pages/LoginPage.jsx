@@ -15,14 +15,14 @@ const LoginPage = () => {
   return (
     <div className="wrapper">
       <div className="box  h-[50vh]  flex flex-col justify-center items-center gap-[50px] ">
-        <h1 className="text-4xl font-bold">Chat Odası</h1>
-        <p className="text-gray-400">Devam Etmek için Giriş Yapın</p>
+        <h1 className="text-4xl font-bold">Chat Room</h1>
+        <p className="text-gray-400">Login to continue</p>
         <button
           onClick={handleLogin}
           className="flex gap-5 items-center p-2 px-4 rounded-md shadow-lg border border-gray-300 hover:bg-gray-100 transition cursor-pointer"
         >
           <img src="/google.png" alt="google" className="w-[30px]" />
-          <span>Google ile Gir</span>
+          <span>Sign in with Google</span>
         </button>
       </div>
     </div>

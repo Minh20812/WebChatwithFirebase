@@ -24,7 +24,7 @@ const Form = ({ room }) => {
         name: auth.currentUser.displayName,
         photo: auth.currentUser.photoURL,
       },
-      cratedAt: serverTimestamp(),
+      createAt: serverTimestamp(),
     });
 
     setText("");
@@ -39,7 +39,7 @@ const Form = ({ room }) => {
         onChange={(e) => setText(e.target.value)}
         value={text}
         type="text"
-        placeholder="meajınızı yazınız..."
+        placeholder="write your message..."
         className="border border-gray-200 shadow-sm p-2 px-4 rounded-md w-1/2"
       />
       <div className="relative">
@@ -58,7 +58,7 @@ const Form = ({ room }) => {
         😁
       </button>
       <button type="submit" className="btn">
-        Gönder
+        Send
       </button>
     </form>
   );

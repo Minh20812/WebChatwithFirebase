@@ -23,7 +23,7 @@ const Main = ({ room }) => {
     const q = query(
       collectionRef,
       where("room", "==", room),
-      orderBy("cratedAt", "asc")
+      orderBy("createAt", "asc")
     );
 
     // anlık veri akışı
@@ -73,7 +73,7 @@ const Main = ({ room }) => {
     >
       {message.length < 1 ? (
         <div className="h-full grid place-items-center  text-zinc-400">
-          <p>Sohbete ilk mesajı gönderin</p>
+          <p>Send the first message in the chat</p>
         </div>
       ) : (
         message.map((item, i) => <Message key={i} data={item} />)

@@ -28,9 +28,9 @@
     padding: 2px 8px;
     max-width: 90%;
     width: fit-content;
-    /* bir kelime bir satıra sığmazsa, bu kelimenin bir kısmı bir alt satıra geçer */
+    /* if a word does not fit in a line, a part of this word passes to the next line  */
     overflow-wrap: break-word;
-    /* metin kutusunun genişliğine göre metin satırları kırılır ve ekstra boşluklar yok sayılır */
+    /* text lines are broken according to the width of the text box and extra spaces are ignored */
     white-space: normal;
   }
 }

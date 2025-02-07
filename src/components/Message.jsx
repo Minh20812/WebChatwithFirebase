@@ -2,7 +2,7 @@ import { auth } from "../firebase";
 import generateUserColor from "../utils/generateUserColor";
 
 const Message = ({ data }) => {
-  //eğer mesajı şuan oturumu açık olan kullanıcı ise
+  //if the message is from current active user
   if (data.author.id === auth.currentUser.uid) {
     return (
       <p className="message bg-black text-white rounded-[7px_7px_0_7px] self-end">
@@ -10,7 +10,7 @@ const Message = ({ data }) => {
       </p>
     );
   }
-  //! mesajı farklı kullanıcı atarsa
+  //! if message is from other user
   return (
     <div className="flex items-center gap-1">
       <img

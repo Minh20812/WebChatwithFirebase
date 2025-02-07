@@ -11,18 +11,18 @@ const App = () => {
   const [room, setRoom] = useState(null);
 
   useEffect(() => {
-    //kullanıcı oturumu her değiştiğinde güncel bilgilerini getirir
+    //Everytime the user sign in, it brings their current informations
     const unSub = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-    //kullanıcı sayfadan ayrılınca izlemeyi durdur
+    //stop tracking when user leaves the page
     return () => unSub();
   }, []);
-  //kullanıcı verisi yüklenmediyse
+  // if user data has not been loaded
   if (user === undefined) {
     return <Loader />;
   }
-  // oturum açılmadıysa
+  // If user has not logged in
   if (user === null) return <LoginPage />;
 
   if (room) return <ChatPage room={room} setRoom={setRoom} />;

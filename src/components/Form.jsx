@@ -12,10 +12,10 @@ const Form = ({ room }) => {
 
     if (text.trim() === "") return;
 
-    //veri kaydedileceği kolleksiyon referansı
+    //the collection reference in which data will be stored
     const collectionRef = collection(db, "messages");
 
-    //ilgili kolleksiyona veri ekle
+    //add data in the relevant collection
     await addDoc(collectionRef, {
       text,
       room,

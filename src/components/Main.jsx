@@ -19,14 +19,14 @@ const Main = ({ room }) => {
   useEffect(() => {
     const collectionRef = collection(db, "messages");
 
-    //sorgu ayarları
+    //Query settings
     const q = query(
       collectionRef,
       where("room", "==", room),
       orderBy("createAt", "asc")
     );
 
-    // anlık veri akışı
+    // Realtime listener
     const unsub = onSnapshot(q, (data) => {
       const temp = [];
 
@@ -40,16 +40,16 @@ const Main = ({ room }) => {
     return () => unsub();
   }, []);
 
-  //yeni mesaj gelince odaklan
+  //Focus on new incoming message
   useEffect(() => {
     if (message.length > 0) {
       const lastMsg = message[message.length - 1];
 
       if (lastMsg.author.id === auth.currentUser.uid) {
-        //son mesajı oturumu açık kullanıcı atıysa her koşulda aşağı kaydır
+        //If last message is sent by current user then scroll bottom every time
         scrollToBottom();
       } else if (isAtBottom) {
-        //son mesajı farklı kullanıcı attıysa isAtBottom true ise aşağı kaydır
+        //If last message is sent by some other user and isAtBottom is true then scroll bottom
         scrollToBottom();
       }
     }
@@ -58,7 +58,7 @@ const Main = ({ room }) => {
     lastMsgRef.current.scrollIntoView();
   };
 
-  //scrool konumu
+  //Scroll position
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
 

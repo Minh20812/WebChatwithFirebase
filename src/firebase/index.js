@@ -16,11 +16,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ! authentication hizmeti referans
+// ! authentication service reference
 export const auth = getAuth(app);
 
-//! google sağlayıcı  kurulum
+//! google provider implement
 export const provider = new GoogleAuthProvider();
 
-//! database kurulum
+//! database implement
 export const db = getFirestore(app);
